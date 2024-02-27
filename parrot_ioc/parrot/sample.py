@@ -1,5 +1,6 @@
 from caproto import ChannelData, ChannelType
-from caproto.server import (PVGroup, SubGroup, pvproperty, PvpropertyString)
+from caproto.server import (PVGroup, SubGroup, pvproperty, PvpropertyString,
+                            PvpropertyInteger)
 
 
 #@define
@@ -13,34 +14,27 @@ class Sample(PVGroup):
         
 
     samplename = pvproperty(
-        value=" ",
+        value="default sample",
         name="samplename",
         doc="Sample name as given by the user",
-        dtype=PvpropertyString,
+        string_encoding="utf-8",
+        report_as_string=True,
         max_length=255
         )
-
-    @samplename.putter
-    async def samplename(self, instance: ChannelData, value: str):
-        """Data was written over channel access."""
-        if len(value) > 40:
-            # 40 corresponds to the max length in bytes of 255 
-            raise ValueError('Sample name too long')
-
-        print(f'New sample name recorded as: {value}')
-        return value
 
 
     sampleowner = pvproperty(
         value="",
         name="sampleowner",
-        dtype=PvpropertyString,
+        string_encoding="utf-8",
+        report_as_string=True,
+        max_length=255
         )
 
     proposal = pvproperty(
-        value="",
+        value=0,
         name="Proposal",
-        dtype=PvpropertyString,        
+        dtype=PvpropertyInteger,
         )
 
     sampleid = pvproperty(
