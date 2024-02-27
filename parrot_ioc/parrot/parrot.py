@@ -2,7 +2,8 @@ from caproto import ChannelData, ChannelType
 from caproto.server import AsyncLibraryLayer, PVGroup, SubGroup, pvproperty
 from .sample import Sample
 from .experiment import Experiment
-
+from .config import Config
+from .sample_environment import SampleEnvironment
 
 class Parrot(PVGroup):
     """
@@ -16,4 +17,8 @@ class Parrot(PVGroup):
     sample = SubGroup(Sample, prefix="sample:")
 
     experiment = SubGroup(Experiment, prefix="exp:")
+
+    instrument = SubGroup(Config, prefix="config:")
+
+    sample_env = SubGroup(SampleEnvironment, prefix="environment:")
 
