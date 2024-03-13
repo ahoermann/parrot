@@ -60,12 +60,18 @@ class Slits(PVGroup):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
-    slit1 = SubGroup(Slit, prefix="slit1:")
+    vertical1 = SubGroup(Slit, prefix="vertical1:")
 
-    slit2 = SubGroup(Slit, prefix="slit2:")
+    vertical2 = SubGroup(Slit, prefix="vertical2:")
 
-    slit3 = SubGroup(Slit, prefix="slit3:")
-    
+    vertical3 = SubGroup(Slit, prefix="vertical3:")
+
+    horizontal1 = SubGroup(Slit, prefix="horizontal1:")
+
+    horizontal2 = SubGroup(Slit, prefix="horizontal2:")
+
+    horizontal3 = SubGroup(Slit, prefix="horizontal3:")
+
 
 class Config(PVGroup):
     """
