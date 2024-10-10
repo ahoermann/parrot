@@ -2,8 +2,7 @@ import textwrap
 
 import caproto.server
 
-from .parrot import Parrot
-
+from parrot import Parrot
 
 def main():
     ioc_options, run_options = caproto.server.ioc_arg_parser(
@@ -12,6 +11,10 @@ def main():
     )
 
     ioc = Parrot(**ioc_options)
+    # groups = {}
+    
+    # groups["sampleholder"] = SampleHolder(f"{ioc.prefix}sampleholder")
+    
     caproto.server.run(ioc.pvdb, **run_options)
 
 

@@ -1,6 +1,7 @@
 from caproto import ChannelData, ChannelType
 from caproto.server import (PVGroup, SubGroup, pvproperty, PvpropertyString,
                             PvpropertyInteger)
+from sample_environment import Motors
 
 
 #@define
@@ -48,3 +49,4 @@ class Sample(PVGroup):
         name="sampos",
         dtype=PvpropertyString,
         )
+
