@@ -93,17 +93,17 @@ class Slits(PVGroup):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
-    vertical1 = SubGroup(Slit, prefix="vertical1:")
+    vertical1 = SubGroup(VerticalSlit, prefix="vertical1:")
 
-    vertical2 = SubGroup(Slit, prefix="vertical2:")
+    vertical2 = SubGroup(VerticalSlit, prefix="vertical2:")
 
-    vertical3 = SubGroup(Slit, prefix="vertical3:")
+    vertical3 = SubGroup(VerticalSlit, prefix="vertical3:")
 
-    horizontal1 = SubGroup(Slit, prefix="horizontal1:")
+    horizontal1 = SubGroup(HorizontalSlit, prefix="horizontal1:")
 
-    horizontal2 = SubGroup(Slit, prefix="horizontal2:")
+    horizontal2 = SubGroup(HorizontalSlit, prefix="horizontal2:")
 
-    horizontal3 = SubGroup(Slit, prefix="horizontal3:")
+    horizontal3 = SubGroup(HorizontalSlit, prefix="horizontal3:")
 
 
 class Config(PVGroup):
