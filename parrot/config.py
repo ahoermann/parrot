@@ -52,6 +52,39 @@ class Slit(PVGroup):
         doc="slit gap width",
         )
 
+class HorizontalSlit(Slit):
+    """
+    A group of PVs describing the slit blades
+    """
+    left_blade = pvproperty(
+        value=0.0,
+        name="hl",
+        doc="left blade position",
+        )
+
+    right_blade = pvproperty(
+        value=0.0,
+        name="hr",
+        doc="left blade position",
+        )
+    
+class VerticalSlit(Slit):
+    """
+    A group of PVs describing the slit blades
+    """
+    top_blade = pvproperty(
+        value=0.0,
+        name="top",
+        doc="top blade position",
+        )
+
+    bottom_blade = pvproperty(
+        value=0.0,
+        name="bot",
+        doc="bottom blade position",
+        )
+
+    
 class Slits(PVGroup):
     """
     A group of PVs describing the positions of the slits 
