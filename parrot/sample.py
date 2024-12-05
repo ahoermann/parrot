@@ -25,16 +25,18 @@ class Sample(PVGroup):
 
     sampleowner = pvproperty(
         value="",
-        name="sampleowner",
+        name="owner",
         string_encoding="utf-8",
         report_as_string=True,
         max_length=255
         )
 
     proposal = pvproperty(
-        value=0,
-        name="Proposal",
-        dtype=PvpropertyInteger,
+        value="",
+        name="proposal",
+        string_encoding="utf-8",
+        report_as_string=True,
+        max_length=255,
         )
 
     sampleid = pvproperty(
