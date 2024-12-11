@@ -35,6 +35,18 @@ class Experiment(PVGroup):
         dtype=PvpropertyString,
         )
 
+    protocol = pvproperty(
+        value="",
+        name="protocol",
+        dtype=PvpropertyString,
+        )
+
+    procpipeline = pvproperty(
+        value="",
+        name="procpipeline",
+        dtype=PvpropertyString,
+        )
+
     count_time = pvproperty(
         value=1,
         name="count_time",
