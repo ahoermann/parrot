@@ -47,6 +47,12 @@ class Experiment(PVGroup):
         dtype=PvpropertyString,
         )
 
+    batchnum = pvproperty(
+        value=1,
+        name="batchnum",
+        dtype=PvpropertyInteger,
+        )
+
     count_time = pvproperty(
         value=1,
         name="count_time",
@@ -65,3 +71,10 @@ class Experiment(PVGroup):
         doc="number of repetitions",
         dtype=PvpropertyInteger,
         )
+
+    additional_parameters = pvproperty(
+        value="none",
+        name="additional_parameters",
+        doc="additional parameters defined in the logbook",
+        record="waveform",
+    )

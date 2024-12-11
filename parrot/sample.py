@@ -50,3 +50,19 @@ class Sample(PVGroup):
         name="sampos",
         dtype=PvpropertyString,
         )
+
+    matrixfraction = pvproperty(
+        value=1.0,
+        name="matrixfraction",
+        )
+
+    samplethickness = pvproperty(
+        value=1e-4,
+        name="samplethickness",
+        )
+
+    overall_mu = pvproperty(
+        value=1.0,
+        name="overall_mu",
+        doc="X-ray absorption coefficient of the sample in 1/m",
+        )
