@@ -40,9 +40,8 @@ class Sample(PVGroup):
         )
 
     sampleid = pvproperty(
-        value="",
+        value=0,
         name="sampleid",
-        dtype=PvpropertyString,
         )
 
     samplepos = pvproperty(
