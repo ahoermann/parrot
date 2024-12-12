@@ -31,7 +31,7 @@ class Experiment(PVGroup):
 
     operator = pvproperty(
         value="",
-        name="operator",
+        name="user",
         dtype=PvpropertyString,
         )
 
