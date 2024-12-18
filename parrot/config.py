@@ -106,6 +106,37 @@ class Slits(PVGroup):
     horizontal3 = SubGroup(HorizontalSlit, prefix="horizontal3:")
 
 
+class Source(PVGroup):
+    """
+    A group of PVs describing source status (position and gap)
+    """
+
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+
+    voltage = pvproperty(
+        value=0.0,
+        name="voltage",
+        unit="kV",
+        doc="Voltage of the source."
+    )
+
+    current = pvproperty(
+        value=0.35,
+        name="current",
+        unit="mA",
+        doc="Current of the source.",
+    )
+
+    shutter = pvproperty(
+        enum_strings=("open", "closed", "unknown"),
+        dtype=ChannelType.ENUM,
+        value="closed",
+        name="shutter",
+        doc="State of the safety shutter. One of 'open', 'closed', and 'unknown'.",
+    )
+
+
 class Config(PVGroup):
     """
     A group of PVs regarding the instrument configuration (beam,
@@ -150,10 +181,26 @@ class Config(PVGroup):
 
     slits = SubGroup(Slits, prefix="slits:")
     
-
+    source_cu = SubGroup(Source, prefix="source_cu:")
+    source_mo = SubGroup(Source, prefix="source_mo:")
     
+    source = pvproperty(
+        enum_strings=("source_cu", "source_mo", "unknown"),
+        dtype=ChannelType.ENUM,
+        value="source_cu",
+        name="source",
+        doc="Source in use. Default: 'source_cu'. Value is one of 'source_cu', 'source_mo', and 'unknown'.",
+    )
 
-        
+    dual = pvproperty(
+        value=0.0,
+        name="dual",
+        dtype=PvpropertyDouble,
+        units="mm",
+        precision=2,  # check out motor specs
+        doc="Position of the dual source translation stage.",
+    )
+
 
 
 
