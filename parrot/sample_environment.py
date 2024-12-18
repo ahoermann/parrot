@@ -70,16 +70,22 @@ class SampleEnvironment(PVGroup):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         
-    temperature = pvproperty(
-        value=0,
-        name="temperature",
-        doc="temperature of the sample",
-        units="K",
-        dtype=PvpropertyDouble,
+    environment_temperature = pvproperty(
+        value=0.0,
+        name="environment_temperature",
+        doc="Temperature of the environment in degrees Celsius, from portenta:t0",
+        units="°C",
         )
 
+    stage_temperature = pvproperty(
+        value=1.0,
+        name="stage_temperature",
+        units="°C",
+        doc="Sample stage temperature in degrees Celsius, from portenta:t1",
+    )
+
     chamber_pressure = pvproperty(
-        value=0,
+        value=0.0,
         name="pressure",
         doc="pressure in the sample chamber (inficon)",
         units="mbar",
