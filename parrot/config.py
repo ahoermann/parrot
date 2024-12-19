@@ -129,9 +129,9 @@ class Source(PVGroup):
     )
 
     shutter = pvproperty(
-        enum_strings=("open", "closed", "unknown"),
+        enum_strings=("Open", "Closed", "unknown"),
         dtype=ChannelType.ENUM,
-        value="closed",
+        value="Closed",
         name="shutter",
         string_encoding = "utf-8",
         doc="State of the safety shutter. One of 'open', 'closed', and 'unknown'.",
