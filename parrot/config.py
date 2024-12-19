@@ -130,6 +130,7 @@ class Source(PVGroup):
 
     shutter = pvproperty(
         enum_strings=("open", "closed", "unknown"),
+        dtype=ChannelType.ENUM,
         value="closed",
         name="shutter",
         string_encoding = "utf-8",
@@ -186,6 +187,7 @@ class Config(PVGroup):
     
     source = pvproperty(
         enum_strings=("source_cu", "source_mo", "unknown"),
+        dtype=ChannelType.ENUM,
         value="source_cu",
         name="source",
         doc="Source in use. Default: 'source_cu'. Value is one of 'source_cu', 'source_mo', and 'unknown'.",
