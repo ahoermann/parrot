@@ -133,6 +133,7 @@ class Source(PVGroup):
         dtype=ChannelType.ENUM,
         value="closed",
         name="shutter",
+        string_encoding = "utf-8",
         doc="State of the safety shutter. One of 'open', 'closed', and 'unknown'.",
     )
 
@@ -190,6 +191,7 @@ class Config(PVGroup):
         value="source_cu",
         name="source",
         doc="Source in use. Default: 'source_cu'. Value is one of 'source_cu', 'source_mo', and 'unknown'.",
+        string_encoding = "utf-8",
     )
 
     dual = pvproperty(
