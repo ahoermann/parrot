@@ -117,14 +117,14 @@ class Source(PVGroup):
     voltage = pvproperty(
         value=0.0,
         name="voltage",
-        unit="kV",
+        units="kV",
         doc="Voltage of the source."
     )
 
     current = pvproperty(
         value=0.35,
         name="current",
-        unit="mA",
+        units="mA",
         doc="Current of the source.",
     )
 
