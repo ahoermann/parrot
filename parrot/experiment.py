@@ -48,8 +48,10 @@ class ExperimentProgress(PVGroup):
         await self.ratio.write(value / self.measurements_overall.value)
         # experimental overhead as observed on 2024-12-17
         overhead = datetime.timedelta(seconds=107.14)
-        time_per_measurement = datetime.timedelta(seconds = self.parent.count_time.value) + overhead
-        remaining_time = int(self.measurements_overall.value - value)*time_per_measurement
+        time_per_measurement = datetime.timedelta(seconds = float(self.parent.count_time.value)) + overhead
+        print(f"{time_per_measurement=}")
+        remaining_time = int(self.measurements_overall.value - int(value))*time_per_measurement
+        print(f"{remaining_time=}")
         await self.estimated_completion_time.write((datetime.datetime.now() + remaining_time).isoformat())
         return
 
