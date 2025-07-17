@@ -53,7 +53,15 @@ class Motors(PVGroup):
         name="pitchgi",
         units="degree",
         doc="pitch angle of the sample stage (GISAXS)"
-        )    
+        )
+
+    dual = pvproperty(
+        value=0.0,
+        name="dual",
+        units="mm",
+        doc="horizontal position of the dual source motor stage"
+        )
+
     
     
     
